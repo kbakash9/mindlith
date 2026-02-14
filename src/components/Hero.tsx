@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import profileImage from "@/assets/profile.jpeg";
-import heroVideo from "@/assets/hero-video.mp4";
 
 const Hero = () => {
   return (
@@ -8,19 +7,6 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center section-padding pt-24 md:pt-20 relative overflow-hidden"
     >
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-15"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
-      </div>
 
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 pointer-events-none z-0">
