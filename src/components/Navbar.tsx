@@ -5,7 +5,6 @@ const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -14,7 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50">
       <div className="container-max section-padding !py-4 flex items-center justify-between">
         <a href="#home" className="font-heading font-bold text-xl text-foreground">
           Akashraj<span className="text-primary">.</span>
@@ -26,13 +25,21 @@ const Navbar = () => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                className="font-body text-sm text-muted-foreground hover:text-primary transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full after:shadow-[var(--glow-primary)]"
               >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
+
+        {/* CTA */}
+        <a
+          href="#contact"
+          className="hidden md:inline-flex px-5 py-2 bg-primary/10 border border-primary/30 text-primary text-sm font-heading font-medium rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[var(--glow-primary)]"
+        >
+          Let's Talk
+        </a>
 
         {/* Mobile Menu Button */}
         <button
@@ -46,14 +53,14 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-card border-t border-border animate-fade-in">
+        <div className="md:hidden glass-card border-t border-border/50 animate-fade-in">
           <ul className="flex flex-col py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-6 py-3 font-body text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+                  className="block px-6 py-3 font-body text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                 >
                   {link.label}
                 </a>

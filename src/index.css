@@ -11,93 +11,60 @@
 
 @layer base {
   :root {
-    --background: 48 33% 97%;
-    --foreground: 220 20% 15%;
+    --background: 230 25% 7%;
+    --foreground: 220 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card: 230 25% 11%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover: 230 25% 11%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 48 95% 62%;
-    --primary-foreground: 220 20% 15%;
+    --primary: 270 80% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 95%;
-    --secondary-foreground: 220 20% 25%;
+    --secondary: 230 25% 15%;
+    --secondary-foreground: 220 20% 85%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 230 20% 18%;
+    --muted-foreground: 230 15% 55%;
 
-    --accent: 220 80% 55%;
+    --accent: 200 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 48 95% 62%;
+    --border: 230 20% 18%;
+    --input: 230 20% 18%;
+    --ring: 270 80% 65%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(48 33% 97%) 0%, hsl(48 40% 95%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(48 95% 62%) 0%, hsl(40 95% 55%) 100%);
-    --shadow-soft: 0 4px 20px -4px hsl(220 20% 15% / 0.1);
-    --shadow-card: 0 8px 30px -8px hsl(220 20% 15% / 0.12);
-    --shadow-profile: 0 20px 60px -15px hsl(48 95% 50% / 0.3);
+    /* Glow tokens */
+    --glow-primary: 0 0 30px hsl(270 80% 65% / 0.4);
+    --glow-accent: 0 0 30px hsl(200 90% 55% / 0.3);
+    --glow-soft: 0 0 60px hsl(270 80% 65% / 0.15);
+
+    /* Glass tokens */
+    --glass-bg: hsl(230 25% 12% / 0.6);
+    --glass-border: hsl(230 20% 30% / 0.3);
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(270 80% 65% / 0.15);
+    --shadow-profile: 0 20px 60px -15px hsl(270 80% 65% / 0.3);
 
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 220 20% 10%;
-    --foreground: 48 20% 95%;
-
-    --card: 220 20% 13%;
-    --card-foreground: 48 20% 95%;
-
-    --popover: 220 20% 13%;
-    --popover-foreground: 48 20% 95%;
-
-    --primary: 48 95% 62%;
-    --primary-foreground: 220 20% 10%;
-
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 48 20% 90%;
-
-    --muted: 220 20% 18%;
-    --muted-foreground: 220 10% 60%;
-
-    --accent: 220 80% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 48 95% 62%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 230 25% 7%;
+    --sidebar-foreground: 220 20% 95%;
+    --sidebar-primary: 270 80% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 230 25% 15%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 230 20% 18%;
+    --sidebar-ring: 270 80% 65%;
   }
 }
 
@@ -132,6 +99,30 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
+
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(270 80% 65% / 0.5), hsl(200 90% 55% / 0.3), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
 
 @layer utilities {
@@ -155,6 +146,8 @@
   .delay-300 { animation-delay: 300ms; }
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
 }
 
 @keyframes fadeUp {
@@ -193,22 +186,40 @@
   animation: float 4s ease-in-out infinite;
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(270 80% 65% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(270 80% 65% / 0.6); }
 }
 
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
-@keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(10px, -10px) scale(1.05); }
-  50% { transform: translate(0, 10px) scale(0.95); }
-  75% { transform: translate(-10px, -5px) scale(1.02); }
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-blob {
-  animation: blob 7s ease-in-out infinite;
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
 }
