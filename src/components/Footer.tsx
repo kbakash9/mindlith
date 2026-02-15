@@ -2,7 +2,7 @@ import { Github, Linkedin, Instagram } from "lucide-react";
 
 const socials = [
   { icon: Github, href: "https://github.com/AkashRaj904", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/akash-raj-236446318/", label: "LinkedIn" },
   
   { icon: Instagram, href: "https://www.instagram.com/_.akxsh_____", label: "Instagram" },
 ];
