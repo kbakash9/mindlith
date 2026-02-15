@@ -1,5 +1,5 @@
 import { GraduationCap, Code, Palette } from "lucide-react";
-import profileImage from "@/assets/profile.jpeg";
+import aboutImage from "@/assets/about-image.jpg";
 
 const About = () => {
   return (
@@ -26,7 +26,7 @@ const About = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/10 rounded-3xl blur-2xl" />
               <div className="relative glass-card rounded-3xl overflow-hidden glow-border">
                 <img
-                  src={profileImage}
+                  src={aboutImage}
                   alt="Akashraj"
                   className="w-full h-80 md:h-96 object-cover object-top"
                 />
