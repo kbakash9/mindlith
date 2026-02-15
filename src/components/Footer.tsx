@@ -4,7 +4,7 @@ const socials = [
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/_.akxsh_____", label: "Instagram" },
 ];
 
 const Footer = () => {
