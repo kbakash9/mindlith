@@ -25,6 +25,8 @@ const Footer = () => {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className="p-3 glass-card rounded-xl text-muted-foreground hover:text-primary hover:shadow-[var(--glow-primary)] hover:-translate-y-1 transition-all duration-300"
               >
